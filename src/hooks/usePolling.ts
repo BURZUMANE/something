@@ -1,5 +1,4 @@
 import {useEffect, useRef, useState} from "react";
-import {AxiosResponse} from "axios";
 
 export function usePolling<T>(interval: number, cb: Function, abortCb: () => AbortController) {
   const isInitial = useRef(true)
@@ -24,9 +23,8 @@ export function usePolling<T>(interval: number, cb: Function, abortCb: () => Abo
       console.log(isInitial.current);
       clearInterval(intervalId);
       abortCb().abort();
-      console.log('asdsadsadsaasd');
     };
-  }, []);
+  }, [abortCb, cb, interval]);
 
   return {data, isLoading};
 }

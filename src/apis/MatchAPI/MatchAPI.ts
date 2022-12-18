@@ -1,6 +1,5 @@
 import {api} from "../configs/axiosConfig";
 import {defineCancelApiObject} from "../configs/axiosUtils";
-import {CanceledError} from "axios";
 
 export interface IMatchEvent {
   event_id: number,

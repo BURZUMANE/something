@@ -1,5 +1,3 @@
-import {IGetAllMatchesResponse} from "../MatchAPI/MatchAPI";
-
 type Nullable<T> = T | null;
 
 interface ICCancellationObject {
