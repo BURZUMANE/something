@@ -27,7 +27,7 @@ const MatchListComponent: React.FC<Props> = () => {
                   <span>Names</span>
               </button>
               <div
-                  className="rounded-lg h-4/5 overflow-scroll w-11/12 md:w-5/6 lg:w-6/12 p-3 bg-white/20 backdrop-blur-sm drop-shadow-xl text-amber-50 text-2xl"
+                  className="rounded-lg max-h-4/5 overflow-scroll w-11/12 md:w-5/6 lg:w-6/12 p-3 bg-white/20 backdrop-blur-sm drop-shadow-xl text-amber-50 text-2xl"
                   data-testid="match-list-component"
               >
                 {matches.map(({id, homeTeam, awayTeam, state}) => {
