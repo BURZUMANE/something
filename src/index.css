@@ -18,6 +18,8 @@ body {
   background: linear-gradient(to right, #8e2de2, peachpuff);
   background-size: 200% auto;
   animation: wave 5s linear infinite;
+  max-width: 100vh;
+  overflow: hidden;
 }
 
 #root{

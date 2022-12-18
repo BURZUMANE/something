@@ -1,7 +1,6 @@
-import {useEffect, useRef, useState} from "react";
+import {useEffect, useState} from "react";
 
 export function usePolling<T>(interval: number, cb: Function, abortCb: () => AbortController) {
-  const isInitial = useRef(true)
   const [data, setData] = useState<T | null>(null);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -12,7 +11,6 @@ export function usePolling<T>(interval: number, cb: Function, abortCb: () => Abo
       setData(response);
 
       setIsLoading(false);
-      isInitial.current = false;
     };
 
     fetchData().then();
@@ -20,7 +18,6 @@ export function usePolling<T>(interval: number, cb: Function, abortCb: () => Abo
     const intervalId = setInterval(fetchData, interval);
 
     return () => {
-      console.log(isInitial.current);
       clearInterval(intervalId);
       abortCb().abort();
     };
